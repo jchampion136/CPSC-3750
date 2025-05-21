@@ -1,0 +1,77 @@
+body {
+    font-size: 12pt;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    color: black;
+    line-height: 14pt;
+    padding-left: 5pt;
+    padding-right: 5pt;
+    padding-top: 5pt;
+}
+
+h1 {
+
+    font-size: 16pt;
+    font-weight: bold;
+    line-height: 20pt;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 20pt;
+}
+
+footer {
+    font-size: 9pt;
+    font-style: italic;
+    line-height: 12pt;
+    text-align: center;
+    padding-top: 30pt;
+}
+
+aside {
+    padding: 10px;
+    font-style: italic;
+}
+
+.pet-footer {
+    text-align: left;
+    margin: 20px;
+    font-style: italic;
+    font-size: 10pt;
+}
+
+
+.grey-text {
+    color:grey;
+    font-weight: bold;
+}
+
+.orange-text {
+    color:orange;
+    font-weight: bold;
+}
+
+.lemon-text {
+    color: #fef250;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 16pt;
+    color: blue;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 14pt;
+    color: orange;
+    font-weight: bold;
+}
+
+.img-dimensions {
+    max-width: 300px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
