@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My CSS Demo Page Part 2</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://kit.fontawesome.com/8bf565ef7f.js" crossorigin="anonymous"></script>
+
+</head>
+
+<header>
+    <h1>Welcome to CSS Demo Page Part 2!</h1>
+</header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="pets.html">Pets</a>
+        <a href="art.html">Art</a> 
+        <a href="english.html">English</a>
+    </nav>
+
+  <style>
+
+    body {
+        background-color: lightblue;
+        background-image: url("ocean.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        color: darkblue;
+    }
+    
+    h1 {
+        background-color: lightblue;
+        color: darkblue
+    }
+
+    p {
+        background-color: lightblue;
+        color: darkblue;
+    }
+
+    /*Demonstration of the box model*/
+    .boxmodel div {
+        width: 200px;
+        border: 10px solid darkblue;
+        padding: 25px;
+        margin: 20px;
+        background-color: lightblue;
+    }
+
+    /*unordered list*/
+    ul { 
+        list-style-type: square;
+        color: whitesmoke;
+    }
+   
+    /*ordered list*/
+    ol {
+        background: #ff9999;
+        padding: 20px;
+        margin-left: 35px;
+        color: #522D80;
+    }
+    
+    /*Demonstrates a responsive table*/
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    td, th {
+        border: 1px solid aquamarine;
+        height: 50px;
+        text-align: left;
+        background-color: darkblue;
+        color: white;
+        padding: 10px;
+    }
+
+    /*Styles the header*/
+    header {
+        float: left;
+        width: 96%;
+        background-color: #522D80;
+        padding: 20px;
+        color: white;
+        text-align: center;
+    }
+
+    /*Styles the nav bar*/
+    nav {
+        background-color: #522D80; 
+        padding: 15px;
+        text-align: left;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+
+    /*demonstrates the footer*/
+    footer {
+        position: relative;
+        float: left;
+        width: 96%;
+        height: 100%;
+        background-color: darkblue;
+        color: white;
+        text-align: center;
+        font-style: italic;
+        font-weight: bold;
+        padding: 20px;     
+        border-top: 5px solid #F56600;
+    }
+
+    /* Styles the image gallery and floats image left*/
+    img {
+        float: left;
+        margin: 10px;
+        border: 2px;
+        border-color: solid darkblue;
+        width: 150px;
+        height: auto;
+    }
+    
+  </style>
+</head>
+
+<body>
+<main>
+    <p>This page continues to demonstrate more CSS elements.</p>
+    <div class="boxmodel">
+    <div>This demonstrates box model styles</div>
+    <p>Here are some classic example of icons: A link, heart, and home icon.</p>
+    <i class="fa-solid fa-link"></i>
+    <i class="fas fa-heart"></i>
+    <i class="fas fa-home"></i>
+    <p>Here is an unordered Grocery list of fruits with square bulletpoints: </p>
+    <ul>
+        <li>Apples</li>
+        <li>Bananas</li>
+        <li>Oranges</li>
+    </ul>
+    <p>Below is an ordered list of ACC Teams in Clemson Colors:</p>
+    <ol>
+        <li>Florida State Seminoles</li>
+        <li>NC State Wolfpack</li>
+        <li>UNC Tarheels</li>
+    </ol>
+    
+    <p>Here is a responsive table of a list of examples of student grades:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Student</th>
+                <th>Class</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Jackson</td>
+                <td>Math</td>
+                <td>93</td>
+            </tr>
+            <tr>
+                <td>Tommy</td>
+                <td>Science</td>
+                <td>88</td>
+            </tr>
+            <tr>
+                <td>Taylor</td>
+                <td>History</td>
+                <td>91</td>
+            </tr>
+                <td>Marvin</td>
+                <td>Math</td>
+                <td>68</td>
+        </tbody>
+    </table>
+    <p> Lastly, I have created a image gallery of Spongebob and his friends that float left:</p>
+    <img src="Spongebob.jpg">
+    <img src="Patrick.jpg">
+    <img src="Squidward.jpg">
+</main>
+    <footer>
+        <p> Example footer for CSS Demo Assignment</p>
+    </footer>
+</body>
+</html>
