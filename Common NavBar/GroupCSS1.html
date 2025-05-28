@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My CSS Demo Page</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+    <h1>Welcome to CSS Demo Page Part 1!</h1>
+
+    <div id="navbar"></div>
+
+<style>
+    /*covers background colors, images, repeat, and attachment*/
+    body {
+        background-color: lightblue;
+        background-image: url("ocean.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        color: darkblue;
+    }
+    
+    h1 {
+        background-color: lightblue;
+        color: darkblue
+    }
+
+    p {
+        background-color: lightblue;
+        color: darkblue;
+    }
+
+    /*background color with padding*/
+    div {
+        background: rgba(173, 216, 230, 0.3);
+        color: darkblue;
+        padding-top: 25px;
+        padding-right: 50px;
+        padding-bottom: 75px;
+        padding-left: 100px;
+
+    }
+
+    /*Creates a purple border*/
+    .purpleborder { 
+        border: 2px solid purple;
+    }
+
+    /*dotted border*/
+    p.dotted {
+        border-style: dotted;
+    }
+
+    /*mixed border*/
+    p.mixed {
+        border-style: dotted dashed solid double;
+    }
+
+    /*ridged border*/
+    p.ridge {
+        border-style: ridge;
+    }
+
+    /*different border width, styles and colors*/
+    p.one {
+        border-style: dotted;
+        border-width: 5px;
+        border-color: red;
+    }
+
+    p.two {
+        border-style: solid;
+        border-width: medium;
+        border-color: violet;
+    }
+
+    p.three {
+        border-style: dashed;
+        border-width: thick;
+        border-color: pink;
+    }
+
+
+    p.four {
+        border-top-style: dotted;
+        border-bottom-style: dotted;
+        border-left-style: solid;
+        border-right-style: solid;
+        border-width: thick;
+        border-color: purple orange;
+    }
+
+
+    p.five {
+        border-width: thick;
+        border-color: red;
+        border-style: dotted solid double;
+    }
+
+    /*Rounded Borders*/
+    p.six {
+        border: 2px solid hotpink;
+        border-width: thick;
+        border-radius: 5px;
+    }
+
+    /*set Margins*/
+    p.seven {
+        margin-top: 50px;
+        margin-bottom: 125px;
+        margin-right: 100px;
+        margin-left: 50px;
+    }
+
+    /*set height/Width*/
+    p.eight {
+        height: 100px;
+        width: 500px;
+        background-color: magenta;
+    }<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My CSS Demo Page</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+  <h1>Welcome to My CSS Demo Page!</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="pets.html">Pets</a>
+        <a href="art.html">Art</a> 
+        <a href="english.html">English</a>
+    </nav>
+
+  <style>
+    /*covers background colors, images, repeat, and attachment*/
+    body {
+        background-color: lightblue;
+        background-image: url("ocean.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        color: darkblue;
+    }
+    
+    h1 {
+        background-color: lightblue;
+        color: darkblue
+    }
+
+    p {
+        background-color: lightblue;
+        color: darkblue;
+    }
+
+    /*background color with padding*/
+    div {
+        background: rgba(173, 216, 230, 0.3);
+        color: darkblue;
+        padding-top: 25px;
+        padding-right: 50px;
+        padding-bottom: 75px;
+        padding-left: 100px;
+
+    }
+
+    /*Creates a purple border*/
+    .purpleborder { 
+        border: 2px solid purple;
+    }
+
+    /*dotted border*/
+    p.dotted {
+        border-style: dotted;
+    }
+
+    /*mixed border*/
+    p.mixed {
+        border-style: dotted dashed solid double;
+    }
+
+    /*ridged border*/
+    p.ridge {
+        border-style: ridge;
+    }
+
+    /*different border width, styles and colors*/
+    p.one {
+        border-style: dotted;
+        border-width: 5px;
+        border-color: red;
+    }
+
+    p.two {
+        border-style: solid;
+        border-width: medium;
+        border-color: violet;
+    }
+
+    p.three {
+        border-style: dashed;
+        border-width: thick;
+        border-color: pink;
+    }
+
+
+    p.four {
+        border-top-style: dotted;
+        border-bottom-style: dotted;
+        border-left-style: solid;
+        border-right-style: solid;
+        border-width: thick;
+        border-color: purple orange;
+    }
+
+
+    p.five {
+        border-width: thick;
+        border-color: red;
+        border-style: dotted solid double;
+    }
+
+    /*Rounded Borders*/
+    p.six {
+        border: 2px solid hotpink;
+        border-width: thick;
+        border-radius: 5px;
+    }
+
+    /*set Margins*/
+    p.seven {
+        margin-top: 50px;
+        margin-bottom: 125px;
+        margin-right: 100px;
+        margin-left: 50px;
+    }
+
+    /*set height/Width*/
+    p.eight {
+        height: 100px;
+        width: 500px;
+        background-color: magenta;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+    <p>This page demonstrates different CSS elements.</p>
+    <p>This is a test paragraph. There is dark blue text on a light blue background.</p>
+
+    <p class="purpleborder">This text has a purple color border around it.</p>
+
+    <p class="dotted"> This has a dotted border.</p>
+    <p class="mixed"> This has a a bunch of mixed borders.</p>
+    <p class="ridge"> This has a ridged border.</p>
+    <p class="one"> This border is red and dotted with a 5px width.</p>
+    <p class="two"> This border is solid violet with a medium width. </p>
+    <p class="three"> This border is pink and dashed with a thick width. </p>
+    <p class="four"> This border has Clemson colors with dotted-solid lines. </p>
+    <p class="five"> This border has dotted, solid, and double lines. </p>
+    <p class="six"> This border is rounded </p>
+    <p class="seven"> This text has a top margin of 50px, bottom of 125px, right of 100px and left of 50px</p>
+    <p class="eight"> This text sets the height and width to 100x500</p>
+
+    <div>
+        This div text shows different padding values.
+    </div>  
+
+</body>
+</html>
+
+</head>
+
+<body>
+
+    <p>This page demonstrates different CSS elements.</p>
+    <p>This is a test paragraph. There is dark blue text on a light blue background.</p>
+
+    <p class="purpleborder">This text has a purple color border around it.</p>
+
+    <p class="dotted"> This has a dotted border.</p>
+    <p class="mixed"> This has a a bunch of mixed borders.</p>
+    <p class="ridge"> This has a ridged border.</p>
+    <p class="one"> This border is red and dotted with a 5px width.</p>
+    <p class="two"> This border is solid violet with a medium width. </p>
+    <p class="three"> This border is pink and dashed with a thick width. </p>
+    <p class="four"> This border has Clemson colors with dotted-solid lines. </p>
+    <p class="five"> This border has dotted, solid, and double lines. </p>
+    <p class="six"> This border is rounded </p>
+    <p class="seven"> This text has a top margin of 50px, bottom of 125px, right of 100px and left of 50px</p>
+    <p class="eight"> This text sets the height and width to 100x500</p>
+
+    <div>
+        This div text shows different padding values.
+    </div>  
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+    </script>
+</body>
+</html>
+

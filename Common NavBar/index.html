@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jackson Champion's CPSC3750 Summer Website</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <header>
+        <h1>Jackson Champion's CPSC3750 Summer 2025 Website</h1>
+    </header>
+
+    <div id="navbar"></div>
+
+    <h1 class="title">About Me</h1>
+    <p>My name is Jackson Champion. <br>
+        This is my web site for CPSC 3750 Summer 2024. <br>
+        I am a senior Computer Science major at Clemson University.</p>
+    <p>I enjoy a number of activities such as fantasy card games like <em>Magic: The Gathering</em> and hiking.</p>
+    <p>I am currently enjoying my vacation in Holden Beach, North Carolina!</p>
+    <p>Here is a current picture of me:</p>
+    <img src="Jackson.jpg" class="img-dimensions">
+    
+    <h1 class="title">My Pets</h1>
+    <p> At home, I have four cats and one snake. Click the link to learn more: <a href="pets.html">My Pets</a></p>
+    
+    <h1 class="title">Clemson Works</h1>
+    <p>Below are some projects and assignments I have worked on throughout my time in Clemson University: </p>
+    <h2 class="subtitle">Digital Art</h2>
+    <p>These are some artworks that I have worked on for my DPA minor. Check them out here: <a href="art.html"> My Art</a></p>
+    <h2 class="subtitle">English Paper</h2>
+    <p>Here is a paper I wrote in my English class my Sophomore year. It is a deep analysis of Claudia Rankines book, <em>Citizen</em>. Check it out here: <a href="english.html"> My Paper</a></p>
+    <h2 class="subtitle">CSS Example</h2>
+    <p>Examples of CSS Styles part one: <a href="GroupCSS1.html"> CSS Styles_1</a></p>
+    <p>Examples of CSS Styles part two: <a href="GroupCSS2.html"> CSS Styles_2</a></p> 
+
+    <h2 class="subtitle">Fixed Fluid Hybrid Example</h2>
+    <p>Here is a few improvements from the Fixed Fluid Hybrid exercise : <a href="layout.html"> Basic Fixed Fluid Hybrid</a></p> 
+    <h2 class="subtitle"> PHP Hello World</h2>
+    <p>Check out my first PHP page here: <a href="helloworld.php"> Hello, World!</a></p>
+
+
+
+
+    <footer>
+        <h3>Contact Me</h3>
+        <p> That's just a little bit about me and the things I have done. If you have anymore questions, feel free to email me at
+        <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+    </script>
+</body>
+</html>
