@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Javascript Demo Page</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+    <h1>Welcome to Javascript Events!</h1>
+<body>
+    <div id="navbar"></div>
+    <main>
+        <h1>Change the Background color</h1>
+        <div class="button-container">
+            <button id="redBtn" class="color-button">RED</button>
+            <button id="greenBtn" class="color-button">GREEN</button>
+            <button id="blueBtn" class="color-button">BLUE</button>
+        </div>
+
+        <div class="counter-container">
+            <p id="redCount">RED count: 0</p>
+            <p id="greenCount">GREEN count: 0</p>
+            <p id="blueCount">blue count: 0</p>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Contact Me</h3>
+        <p> any questions? feel free to email me at
+        <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a>
+        </p>
+    </footer>
+
+    <script>
+        //Loads the navbar onto the page
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+
+        //Object that tracks button clicks and mouse hovers
+        buttonCount = {
+            red: {click: 0, hover: 0 },
+            green: {click: 0, hover: 0 },
+            blue: {click: 0, hover: 0 },
+        };
+
+        //References colored buttons 
+        redBtn = document.getElementById('redBtn');
+        greenBtn = document.getElementById('greenBtn');
+        blueBtn = document.getElementById('blueBtn');
+
+        //Changes background to red and updates count on click
+        redBtn.onclick = () => {
+            document.body.style.backgroundColor = 'red';
+            buttonCount.red.click++;
+            document.getElementById('redCount').textContent =
+                `RED count: ${buttonCount.red.click} | Hover count: ${buttonCount.red.hover}`;
+        };
+
+        //Changes background to green and updates count on click
+        greenBtn.onclick = () => {
+            document.body.style.backgroundColor = 'green';
+            buttonCount.green.click++;
+            document.getElementById('greenCount').textContent =
+                `GREEN count: ${buttonCount.green.click} | Hover count: ${buttonCount.green.hover}`;
+        };
+
+        //Changes background to blue and updates count on click
+        blueBtn.onclick = () => {
+            document.body.style.backgroundColor = 'blue';
+            buttonCount.blue.click++;
+            document.getElementById('blueCount').textContent =
+                `BLUE count: ${buttonCount.blue.click} | Hover count: ${buttonCount.blue.hover}`;
+        };
+
+        //Inverts colors of red button and updates count on hover
+        redBtn.addEventListener('mouseenter', () => {
+            redBtn.style.backgroundColor = 'white';
+            redBtn.style.color = 'black';
+            buttonCount.red.hover++;
+            document.getElementById('redCount').textContent =
+                `RED count: ${buttonCount.red.click} | Hover count: ${buttonCount.red.hover}`;
+        });
+
+
+        //Resets red button to black when mouse leaves button
+        redBtn.addEventListener('mouseleave', () => {
+            redBtn.style.backgroundColor = 'black';
+            redBtn.style.color = 'white';
+        });
+
+        //Inverts colors of green button and updates count on hover
+        greenBtn.addEventListener('mouseenter', () => {
+            greenBtn.style.backgroundColor = 'white';
+            greenBtn.style.color = 'black';
+            buttonCount.green.hover++;
+            document.getElementById('greenCount').textContent =
+                `GREEN count: ${buttonCount.green.click} | Hover count: ${buttonCount.green.hover}`;
+        });
+
+        //Resets green button to black when mouse leaves button
+        greenBtn.addEventListener('mouseleave', () => {
+            greenBtn.style.backgroundColor = 'black';
+            greenBtn.style.color = 'white';
+        });
+
+        //Inverts colors of blue button and updates count on hover
+        blueBtn.addEventListener('mouseenter', () => {
+            blueBtn.style.backgroundColor = 'white';
+            blueBtn.style.color = 'black';
+            buttonCount.blue.hover++;
+            document.getElementById('blueCount').textContent =
+                `BLUE count: ${buttonCount.blue.click} | Hover count: ${buttonCount.blue.hover}`;
+        });
+
+        //Resets blue button to black when mouse leaves button
+        blueBtn.addEventListener('mouseleave', () => {
+            blueBtn.style.backgroundColor = 'black';
+            blueBtn.style.color = 'white';
+        });
+    </script>
+</body>
