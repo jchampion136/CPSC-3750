@@ -1,0 +1,54 @@
+<!--
+  File: buttonmove.html
+  Author: Jackson Champion
+  Date: 2025-06-07
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Displays the button move feature on webpage
+  Notes: Creates colored buttons using functions in the script.js file
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Button Move Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div id="navbar"></div>
+  </nav>
+
+  <div class="controls">
+    <label for="colorSelect">Choose color:</label>
+    <select id="colorSelect">
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="yellow">Yellow</option>
+      <option value="white">White</option>
+    </select>
+  </div>
+
+  <div><button class="btn btn-primary" id="makeBtn">Make Button</button></div>
+  <div class="viewingArea"></div>
+  <span class="sumDisplay">Total: 0</span>
+
+  <script src="script.js"></script>
+
+  <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+    </script>
+
+    <footer>
+        <h3>Contact Me</h3>
+        <p> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>
