@@ -17,8 +17,8 @@ function generateBtn() {
 
     btn.innerHTML = Math.floor(Math.random() * 10);
     btn.style.position = "absolute";
-    var x_pos = Math.floor(Math.random() * 700);
-    var y_pos = Math.floor(Math.random() * 700);
+    var x_pos = Math.floor(Math.random() * 1000);
+    var y_pos = Math.floor(Math.random() * 600);
     btn.style.left = x_pos + 'px';
     btn.style.top = y_pos + 'px';
     btn.style.backgroundColor = color;
