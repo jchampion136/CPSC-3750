@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>HTML Events</title>
+</head>
+
+    <h1 class="title">My HTML Events</h1>
+    <div id="navbar"></div>
+
+    
+    
+
+    <style>
+        @keyframes colorChange {
+            0% {color: red; }
+            25%  { color: orange; }
+            50%  { color: green; }
+            75%  { color: blue; }
+            100% { color: purple; }
+        }
+        .rainbowSentence {
+            font-size: 16px;
+            text-align: left;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            animation-name: colorChange;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .dragItem {
+            width: 100px;
+            height: 100px;
+            background-color: coral;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        .dropItem {
+            width: 200px;
+            height: 150px;
+            border: 2px dashed purple;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+            color: royalblue;
+        }
+    </style>
+<body>
+    <ol>
+        <li class="subtitle">Animation</li>
+            <div class="rainbowSentence">This sentence changes to different colors of the rainbow!</div>
+        
+        <li class="subtitle">Drag</li>
+            <p id="dragtarget" ondragstart="dragStart(event)" ondrag="drag(event)" draggable="true" class="dragItem">Drag me!</p>
+            <div class="dropItem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="dropitem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <p id= "message"></p>
+
+        <li class="subtitle">Input</li>
+            <input type="text" oninput="inputFunction(event)">
+            <p> You Typed: <span id="demo"></span></p>
+        
+        <li class= "subtitle">Mouse</li>
+            <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)" src="waterbending.png" width="32" height="32">
+            <p>Hover over  the water symbol above to make it bigger. Leave it to make it small again. </p>
+        
+        <li class= "subtitle">Focus</li>
+            Enter your name and change the background color: <input type="text" onfocus="focusFunction(this)">
+
+
+
+    </ol>
+
+    <script>
+        /* Animation Example */
+        const sentence = document.getElementById("rainbowSentence");
+
+        sentence.addEventListener("animationstart", myStartFunction);
+        sentence.addEventListener("animationiteration", myRepeatFunction);
+        sentence.addEventListener("animationend", myEndFunction);
+
+        function myStartFunction(event) {
+            this.innerHTML = "Animation started: " + event.animationName;
+        }
+
+        function myRepeatFunction(event) {
+            this.innerHTML = "Animation repeated. Elapsed time: " + event.elapsedTime;
+        }
+
+        function myEndFunction(event) {
+            this.innerHTML = "Animation ended.";
+        }
+
+        /* Drag Example */
+        function dragStart(event) {
+            event.dataTransfer.setData("Text", event.target.id)
+        }
+
+        function drag(event) {
+            document.getElementById("message").innerHTML = "Dragging box..."
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const data = event.dataTransfer.getData("Text");
+            event.target.appendChild(document.getElementById(data));
+            document.getElementById("message").innerHTML = "Box Dropped";
+        }
+
+        /* Input Example */
+        function inputFunction(event) {
+            let userText = event.target.value;
+            document.getElementById("demo").innerHTML = userText;
+        }
+
+        /* Mouse Example */
+        function bigImg(x) {
+            x.style.height = "64px";
+            x.style.width = "64px";
+        }
+
+        function normalImg(x) {
+            x.style.height = "32px";
+            x.style.width = "32px";
+        }
+
+        /* Focus Example */
+        function focusFunction(x) {
+            x.style.background = "lightblue";
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+    </script>
+</body>
+</html>
