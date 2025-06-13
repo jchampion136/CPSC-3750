@@ -1,0 +1,39 @@
+<!----
+  File: loops.html
+  Author: Jackson Champion
+  Date: 2025-06-12
+  Course: CPSC 3750 – Web Application Development
+  Purpose: This page allows the user to enter card information through Prompts
+  Notes: Events implemented by the loops.js script 
+--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Business Cards via Loops</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <h1>Business Cards via Loops</h1>
+  <div id="navbar"></div>
+
+  <p><b> Enter business card information from given prompts</b> </p>
+  <script type="text/javascript" src="loops.js"></script>
+
+  <footer>
+    <h3>Contact Me</h3>
+    <p>Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        });
+    });
+  </script>
+
+</body>
+</html>
