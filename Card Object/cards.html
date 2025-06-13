@@ -1,0 +1,54 @@
+<!----
+  File: cards.html
+  Author: Jackson Champion
+  Date: 2025-06-12
+  Course: CPSC 3750 – Web Application Development
+  Purpose: This page allows the user to enter card information using an input interface and buttons
+  Notes: Events implemented by the cards.js script 
+--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Business Cards</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <h1>JavaScript Business Cards</h1>
+  <div id="navbar"></div>
+
+  <p><b>Press "Add New Card" To add new information to the list</b></p>
+  <p><b>Press "Display All Cards" To show all card information.</b></p>
+
+  <form id="cardForm">
+    <label>Name: <input type="text" id="name"></label><br>
+    <label>Email: <input type="text" id="email"></label><br>
+    <label>Address: <input type="text" id="address"></label><br>
+    <label>Phone: <input type="text" id="phone"></label><br>
+    <label>Birthdate: <input type="date" id="birthdate"></label><br>
+
+    <button type="button" onclick="createCard()">Add New Card</button>
+    <button type="button" onclick="displayCards()">Display All Cards</button>
+  </form>
+
+  <h2>Business Card Info</h2>
+  <div id="cardOutput"></div>
+
+  <footer>
+    <h3>Contact Me</h3>
+    <p>Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar').innerHTML = data;
+        });
+    });
+  </script>
+
+  <script type="text/javascript" src="cards.js"></script>
+</body>
+</html>
