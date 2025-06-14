@@ -1,0 +1,54 @@
+<!--
+  File: prime.html
+  Author: Jackson Champion
+  Date: 2025-06-03
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Page for the Prime/non prime listing Program Exam #1 assignment
+  Notes: uses simple html code
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prime/Non-Prime Listing</title>
+    <link href="prime.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <header>
+        <h1>Prime/Non-Prime Listing</h1>
+    </header>
+
+    <label>Enter a Number between 1 - 50: <input type="number" id="number" min="1" max="50"></label>
+    <button type="button" onclick="createList()">START</button>
+
+    <div class="list-section">
+        <div class="animated-background">
+            <h2>Prime Numbers</h2>
+            <ul id="primeList"></ul>
+        </div>
+        <div class="animated-background">
+            <h2>Non-Prime Numbers</h2>
+            <ul id="nonPrimeList"></ul>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Contact Me</h3>
+        <p> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="prime.js"></script>
+
+</body>
+</html>
+
