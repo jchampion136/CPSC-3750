@@ -1,0 +1,148 @@
+/*
+  File: prime.css
+  Author: Jackson Champion
+  Date: 2025-06-14
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Style Sheet for the prime.html webpage
+  Notes: Uses Simple and custom CSS styles.
+*/
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  background-color: whitesmoke;
+  padding-left: 5pt;
+  padding-right: 5pt;
+  padding-top: 5pt;
+  margin: 10px;
+  padding: 10px;
+}
+
+.list-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* header styles*/
+h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    line-height: 20pt;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 20pt;
+}
+
+/* styles for button and button hover*/
+button {
+    background-color:black;
+    color:white;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+}
+
+button:hover {
+  background-color: aqua;
+}
+
+/* navbar style changes*/
+.navbar {
+  background-color: #4b2e83;
+  padding: 10px 20px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #6544a6;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 5px;
+  min-width: 160px;
+}
+
+.dropdown-menu li a {
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.search-container {
+  display: inline-block;
+}
+
+.search-box {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+.search-box button {
+  margin-left: 5px;
+  padding: 6px 10px;
+  background-color: #f57011;
+  color: #4b2e83;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #ddd;
+}
+
+footer {
+    font-size: 9pt;
+    font-style: italic;
+    line-height: 12pt;
+    text-align: center;
+    padding-top: 30pt;
+    background-color: #522D80;
+    color: white;
+    padding: 20px;
+    border-top: 5px solid #F56600;
+    margin-top: 40px;
+}
+
+/*Changes color of background*/
+@keyframes bgColorChange {
+  0%   { background-color: lightcyan; }
+  25%  { background-color: lightgreen; }
+  50%  { background-color: lightyellow; }
+  75%  { background-color: lightpink; }
+  100% { background-color: lightsteelblue; }
+}
+
+/*animation that infinitely loops color changes*/
+.animated-background {
+  animation-name: bgColorChange;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
