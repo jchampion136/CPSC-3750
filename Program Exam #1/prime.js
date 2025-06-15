@@ -40,7 +40,9 @@ function isPrime(num) {
         return false;
     }
     for (i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i == 0) return false;
+        if (num % i == 0) {
+            return false;
+        }
     }
     return true;
 }
