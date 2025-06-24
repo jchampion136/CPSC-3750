@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Group Audio</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+
+  <style>
+    .audioOutput {
+        font-weight: bold;
+        color: darkblue;
+        margin-top: 5px;
+    }
+
+    p {
+        font-size: 16px;
+        color: #522D80;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 20px;
+        color: magenta;
+        margin: 10px 0; 
+    }
+  </style>
+</head>
+<body>
+
+    <div id="navbar"></div>    
+    
+    <h1>"Wish you Were Here" By Pink Floyd</h1>
+    <audio id="audio" src="wish_you_were_here.mp3" controls></audio>
+
+    <p> Click the <b>Played</b> button to get the current range of audio played.</p>
+    <button onclick="playedSound()">Played</button><br>
+    <p id="audioPlayed" class="audioOutput"></p>
+    
+    <p>Click the <b>Is it Paused?</b> button to check if the audio is paused or playing.</p>
+    <button onclick="pausedSound()">Is it Paused?</button><br>
+    <p id="audioPaused" class="audioOutput"></p>
+        
+    <p>Click the buttons below to set the preferred volume:</p> <br>
+    <button onclick="getVolume()">Get Volume</button>
+    <button onclick="setQuarterVolume()">25% Volume</button>
+    <button onclick="setHalfVolume()">50% Volume</button>
+    <button onclick="setThreeQuarterVolume()">75% Volume</button>
+    <button onclick="setFullVolume()">100% Volume</button><br>
+    <p id="audioVolume" class="audioOutput"></p>
+    
+    <p>Click the <b>Get Duration</b> button to get the total duration of the audio.</p>
+    <button onclick="getDuration()">Get Duration</button><br>
+    <p id="audioDuration" class="audioOutput"></p>
+    
+    <p>Click the <b>Get Current Time</b> button to get the current playback time of the audio.</p>
+    <button onclick="getCurrentTime()">Current Time</button><br>
+    <p id="audioTime" class="audioOutput"></p>
+    
+    <p>Click the <b>Set Current Time</b> button to set the current playback time of the audio to 2 minutes.</p>
+    <button onclick="setCurrentTime()">Set Current Time to 2 minutes</button>
+    
+    <script>
+        var audio = document.getElementById("audio");
+
+        //played Example
+        function playedSound(){
+            document.getElementById("audioPlayed").innerHTML = "Start: " + audio.played.start(0) + " End: " + audio.played.end(0);
+        }
+        //paused Example
+        function pausedSound(){
+            if (audio.paused) {
+                document.getElementById("audioPaused").innerHTML = "Audio is paused.";
+            } else {
+                document.getElementById("audioPaused").innerHTML = "Audio is playing.";
+            }
+        }
+        //volume Example
+        function getVolume(){
+            document.getElementById("audioVolume").innerHTML = "Volume: " + (audio.volume * 100) + "%";
+        }
+        //Varying volume options
+        //Quarter, Half, Three-Quarter, Full Volume
+        function setQuarterVolume(){
+            audio.volume = 0.25;
+            document.getElementById("audioVolume").innerHTML = "Volume: 25%";
+        }
+        function setHalfVolume(){
+            audio.volume = 0.5;
+            document.getElementById("audioVolume").innerHTML = "Volume: 50%";
+        }
+        function setThreeQuarterVolume(){
+            audio.volume = 0.75;
+            document.getElementById("audioVolume").innerHTML = "Volume: 75%";
+        }
+        function setFullVolume(){
+            audio.volume = 1.0;
+            document.getElementById("audioVolume").innerHTML = "Volume: 100%";
+        }
+        //Duration Example
+        function getDuration(){
+            document.getElementById("audioDuration").innerHTML = "Duration: " + audio.duration + " seconds";
+        }
+        //Current Time Example
+        //Get current time and set it to 2 minutes
+        function getCurrentTime(){
+            document.getElementById("audioTime").innerHTML = "Current Time: " + audio.currentTime + " seconds";
+        }
+        function setCurrentTime() {
+            audio.currentTime = 120;
+        }
+    </script>
+
+    <footer>
+        <h3>Contact Me</h3>
+        <h3> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></h3>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+    </script>
+</body>
+</html>
