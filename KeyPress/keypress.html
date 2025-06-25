@@ -1,0 +1,79 @@
+<!--
+  File: keypress.html
+  Author: Jackson Champion
+  Date: 2025-06-24
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Adds featres to an already existing script such 
+  as changing background color when certain keys are pressed
+  Notes: Adds keypress functionality using JavaScript
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Keypress Demo</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+
+
+    function displayKey(e) {
+       // which key was pressed?
+       if (e.keyCode) {
+          var keycode = e.keyCode;
+       }  else {
+          var keycode = e.which;
+       }
+       character = String.fromCharCode(keycode);
+
+       if('aeiou'.indexOf(character) >= 0) {
+          character = character.toUpperCase();
+       }
+
+       switch (character.toLowerCase()) {
+        case 'r':
+          document.body.style.backgroundColor = 'red';
+          document.body.style.color = 'white';
+          break;
+        case 'g':
+          document.body.style.backgroundColor = 'green';
+          document.body.style.color = 'white';
+          break;
+        case 'b':
+          document.body.style.backgroundColor = 'blue';
+          document.body.style.color = 'white';
+          break;
+      }
+   
+       // find the object for the destination paragraph
+       var keysParagraph = document.getElementById('keys');
+   
+       // add the character to the paragraph
+       keysParagraph.innerHTML += character;
+    }
+   </script>
+  </head>
+  <body onkeypress="displayKey(event)">
+
+     <div id="navbar"></div>    
+    <h1>Displaying Typed Characters</h1>
+    <p>This document includes a simple script that displays 
+    the keys you type as a new paragraph below. Type a few keys 
+    to try it. Type 'r', 'g', or 'b' to change the background color. </p>
+    <div id="keys"></div>
+
+    <footer>
+        <h3>Contact Me</h3>
+        <h3> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></h3>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+    </script>
+  </body>
+</html>
