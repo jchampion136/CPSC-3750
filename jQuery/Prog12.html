@@ -1,0 +1,139 @@
+<!--
+  File: Prog12.html
+  Author: Jackson Champion
+  Date: 2025-06-26
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Webpage that shows simple elements using jQuery Library
+  Notes: Uses jQuery to create a webpage with various effects like a progress bar, hover effects, and an accordion for jokes.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        var totalSeconds = 20;
+        var currSeconds = 0;
+        var intervalId;
+
+        //Creates a Hover Effect to change the background color of divs
+        $(".hoverDiv").hover(
+            function() {
+                $(this).css("background-color", "yellow");
+            },
+            function() {
+                $(this).css("background-color", "white");
+            }
+        );
+
+        //Fade out divs when each button is clicked
+        $("#fadeButton1").click(function(){
+            $("#div1").fadeOut("slow");
+        });
+
+        $("#fadeButton2").click(function(){
+            $("#div2").fadeOut("slow");
+        });
+
+        $("#fadeButton3").click(function(){
+            $("#div3").fadeOut("slow");
+        });
+  
+        //Initialize the datepicker
+        $("#datepicker").datepicker();
+
+
+        //Initialize the accordion 
+        $("#accordion").accordion({
+            collapsible: true
+        });
+
+        //Creates a progress bar that fills up in 20 seconds
+        $("#progressbar").progressbar({
+            value: 0,
+            max: totalSeconds
+        });
+
+        //Updates the progress bar every second
+        var intervalId = setInterval(function() {
+            currSeconds++;
+            $("#progressbar").progressbar("value", currSeconds);
+
+            //Stops the bar when it reaches 20 seconds
+            if (currSeconds >= totalSeconds) {
+                clearInterval(intervalId);
+            }
+        }, 1000);
+    });
+    </script>
+</head>
+<body>
+
+    <h1>jQuery</h1>
+
+    <div id="navbar"></div>
+
+    <button id="fadeButton1">Fade Div 1</button>
+    <button id="fadeButton2">Fade Div 2</button>
+    <button id="fadeButton3">Fade Div 3</button>
+
+    <div id="div1" class="hoverDiv">
+        <p>A paragraph in a div.</p>
+        <p>Another paragraph in a div.</p>
+    </div>
+    <br>
+
+    <div id="div2" class="hoverDiv">
+        <p>A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+    <br>
+
+    <div id="div3" class="hoverDiv">
+        <p>A paragraph in another div.</p>
+        <p>Another paragraph in another div.</p>
+    </div>
+
+    <h1 class="title">Simple Date Picker</h1>
+    <p>Select a date: <input type="date" id="datepicker"></p>
+
+    <h1 class="title">Funny Developer Jokes</h1>
+    <div id="accordion">
+        <h3>Why did the edge server go bankrupt?</h3>
+        <div>
+            <p>Because it ran out cache.</p>
+        </div>
+        <h3>Why do most Java programmers wear glasses?</h3>
+        <div>
+            <p>Because they don't see sharp</p>
+        </div>
+        <h3>What is the first step in understanding recursion?</h3>
+        <div>
+            <p>To understand recursion, you must first understand recursion.</p>
+        </div>
+    </div>
+
+    <h1 class="title">20 Second Progress Bar</h1>
+    <div id="progressbar"></div>
+
+    <footer>
+        <h3>Contact Me</h3>
+        <h3> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></h3>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+    </script>
+
+</body>
+</html>
