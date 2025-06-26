@@ -1,0 +1,77 @@
+<!--
+  File: navbar.html
+  Author: Jackson Champion
+  Date: 2025-06-03
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Navigation bar for all webpages on my website.
+  Notes: Hosts a Simple navigation bar and a search menu
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jackson's NavBar design</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="pets.html">Pets</a>
+
+    <div class = "dropdown">
+        <a href="#">Clemson Works▾</a>
+        <div class="dropdown-content">
+            <a href="art.html">Art</a> 
+            <a href="english.html">English</a>
+        </div>
+    </div>
+
+    <div class = "dropdown">
+        <a href="#">CSS Examples▾</a>
+        <div class="dropdown-content">
+            <a href="GroupCSS1.html">CSS Styles Pt.1</a>
+            <a href="GroupCSS2.html">CSS Styles Pt.2</a>
+            <a href="layout.html">Fixed Fluid</a>
+        </div>
+    </div>
+
+    <div class = "dropdown">
+        <a href="#">PHP Exercises▾</a>
+        <div class="dropdown-content">
+            <a href="helloworld.php">Hello, World!</a>
+        </div>
+    </div>
+
+    <div class = "dropdown">
+        <a href="#">JavaScript Events▾</a>
+        <div class="dropdown-content">
+            <a href="prog04.html">JavaScript Events</a>
+            <a href="sort.html">Sort Demo</a>
+            <a href="buttonmove.html">Button Move</a>
+            <a href="GroupEvents.html">HTML Event Objects</a>
+            <a href="keypress.html">KeyPress Demo</a>
+        </div>
+    </div>
+
+    <div class = "dropdown">
+        <a href="#">Card Object▾</a>
+        <div class="dropdown-content">
+            <a href="cards.html">Cards</a>
+            <a href="loops.html">Loops</a>
+        </div>
+    </div>
+    
+    <a href="prime.html">Project Exam #1</a>
+    <a href="GroupAudio.html">Pink Floyd</a>
+    <a href="Prog12.html">jQuery</a>
+    
+
+    <div class="search-container">
+        <form action="#" class="search-box">
+            <input type="text" placeholder="Search For Something..." class="search-box">
+            <button type="submit" class="search-btn">Go</button>
+        </form>
+    </div>
+</nav>
