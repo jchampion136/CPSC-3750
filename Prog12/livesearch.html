@@ -1,0 +1,49 @@
+<!--
+  File: livesearch.html
+  Author: Jackson Champion
+  Date: 2025-06-30
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Web page that demonstrates AJAX live search
+  Notes: Loads ajax.js and search.js to show state capitals as the user types them
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AJAX Live Search Example</title>
+  <script type="text/javascript" src="ajax.js"></script>
+  <script type="text/javascript" src="search.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+  <h1>AJAX Live Search Example</h1>
+
+  <div id="navbar"></div>
+
+  <p><strong>Search for State Capitol:</strong>
+  <input type="text" size="40" id="searchlive"></p>
+
+  <div id="results">
+    <ul id="list">
+      <li>[Search results will display here.]</li>
+    </ul>
+
+  </div>
+
+  <footer>
+        <h3>Contact Me</h3>
+        <p> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></p>
+    </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        });
+      });
+  </script>
+
+</body>
+</html>
