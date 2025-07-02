@@ -1,0 +1,45 @@
+<!--
+  File: hangman.html
+  Author: Jackson Champion
+  Date: 2025-07-02
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Webpage for user to play Hangman game. Displays letters and hangman image to user
+  Notes: Uses Javascript to dynamically update the word and has a cheat mode feature that reveals the word to the user.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hangman Game</title>
+   <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="hangman">
+        <p><strong>Contributors:</strong> Jackson Champion</p>
+        <h1>Hangman Game</h1>
+        <img id="hangmanImage">
+        <div id="wordToGuess"></div>
+        <div id="letters"></div>
+        <label> <input type="checkbox" id="cheatMode">Enable Cheat Mode</label>
+        <button onclick="startGame()">Start New Game</button>
+   </div>
+   <script src="hangman.js"></script>
+
+   <footer>
+        <h3>Contact Me</h3>
+        <p> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></p>
+    </footer>
+    
+   <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+    </script>
+</body>
+</html>
