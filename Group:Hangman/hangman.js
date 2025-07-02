@@ -23,13 +23,13 @@ function startGame() {
     guessedLetters = new Array();
 
    
-    /*vFetches a new word from the list on server. A cache buster is implemented that
+    /*Fetches a new word from the list on server. A cache buster is implemented that
     makes sure a new word is fetched each time the game starts.*/
     fetch('getWord.php?nocache=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
             if (data.word) {
-                //If Cheat mode is checked, Show the word as an alert on page.
+                //If Cheat mode is checked, Shows the word as an alert on page.
                 if (cheat) {
                     alert("Cheat Mode: " + data.word);
                 }
