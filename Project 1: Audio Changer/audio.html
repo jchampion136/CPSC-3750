@@ -26,6 +26,7 @@
 
     <!--Rewind And forward Audio Buttons-->
     <div id="controls">
+        <button onclick="PlayOrPause()">Play/Pause</button>
         <button onclick="moveBackward(5)">Rewind 5s</button>
         <button onclick="moveForward(5)">Forward 5s</button>
     </div>
@@ -36,6 +37,7 @@
     <h2>Playlist</h2>
     
     <div id="playlist"></div>
+    <button id="addTitleBtn" onclick="addTitle()">Add Title</button>
     
 
     <script src="audio.js"></script>
