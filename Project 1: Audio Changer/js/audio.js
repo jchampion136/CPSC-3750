@@ -31,14 +31,14 @@ function formatTime(seconds) {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
 
-    let formattedTime;
+    let formattedSeconds = '';
     //Puts a leading zero if seconds are less than 10
     if (secs < 10) {
-        formmattedTime = '0' + secs;
+        formmattedSeconds = '0' + secs;
     } else {
-        formmattedTime = secs;
+        formmattedSeconds = secs;
     }
-    return mins + ':' + formmattedTime;
+    return mins + ':' + formmattedSeconds;
 }
 
 //Get the audio file name and display it
@@ -125,8 +125,8 @@ function updateCurrentTime() {
   timeDisplay.innerHTML = formatTime(audio.currentTime);
 }
 
-//Continually updates the current time display every 500 milliseconds to ensure correctness
-setInterval(updateCurrentTime, 500);
+//Continually updates the current time display every 100 milliseconds to ensure accuracy
+setInterval(updateCurrentTime, 100);
 
 //loads the playlist and creates buttons for each segment
 function loadPlaylist() {
@@ -151,3 +151,7 @@ function loadPlaylist() {
     playlist.appendChild(button);
   }
 }
+  // Load the playlist
+  loadPlaylist();
+
+
