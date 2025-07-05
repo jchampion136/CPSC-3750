@@ -48,7 +48,6 @@ function startTimer(end) {
   //Checks if the audio has reached the end of the segment
     if (audio.currentTime >= end) {
       audio.pause();
-      audio.currentTime = end;
       updateCurrentTime(); //Update The display
     }
 }
@@ -83,8 +82,13 @@ function addTitle() {
   currentTime = Math.floor(audio.currentTime);
 
   insertIndex = 0;
-  while ((insertIndex < times.length) && (currentTime > times[insertIndex])) {
-    insertIndex++;
+  for (let i = 0; i < times.length; i++) {
+    //Finds the correct position to insert the new title based on the current time
+    if (currentTime >= times[i]) {
+      insertIndex = i + 1;
+    } else {
+      break;
+    }
   }
 
   //Insert the new title and time in each array at the correct position
