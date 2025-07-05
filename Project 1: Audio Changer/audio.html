@@ -20,7 +20,8 @@
     <div id="navbar"></div>
 
 
-    <p><strong>Now Playing:</strong> <span id="fileName">Stairway to Heaven - Led Zeppelin</span></p>
+     <!--Displays the audio file name-->
+    <p><strong>Now Playing:</strong> <span id="fileName"></span></p>
     <audio id="audio" src="Led_Zeppelin.mp3" controls></audio>
 
 
@@ -54,6 +55,7 @@
                 .then(data => {
                     document.getElementById('navbar').innerHTML = data;
                 });
+            // Load the playlist
             loadPlaylist();
         });
         
