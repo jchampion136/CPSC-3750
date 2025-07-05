@@ -4,10 +4,9 @@
   Date: 2025-06-24
   Course: CPSC 3750 – Web Application Development
   Purpose: Demonstrates audio features for project #1 such as segment playback and a playlist.
-  Notes: Uses Javascript implemeted by auidio.html and audio.css
+  Notes: Uses Javascript implemented by audio.html and audio.css
 */
 audio = document.getElementById('audio');
-fileName = document.getElementById('fileName');
 
 //Array of audio segment titles
 titles = [
@@ -37,10 +36,19 @@ function formatTime(seconds) {
     if (secs < 10) {
         formmattedTime = '0' + secs;
     } else {
-        formmattedTime = secs
+        formmattedTime = secs;
     }
     return mins + ':' + formmattedTime;
 }
+
+//Get the audio file name and display it
+function updateFileName() {
+  fileName = document.getElementById('fileName');
+  src = audio.getAttribute('src');
+  fileName.innerHTML = src;
+}
+
+updateFileName();
 
 //Starts a timer that pauses the audio when it reaches the end of a segment
 function startTimer(end) {
@@ -70,6 +78,14 @@ function PlayOrPause() {
 
 //Allows the user to add a title at the current play time
 function addTitle() {
+  if(titles.length >= 50) {
+    //Displays an alert if the user tries to add more than 50 titles
+    alert("Only 50 titles can be added to the playlist.");
+    return;
+  }
+  //Gets the current time of the audio
+  currentTime = Math.floor(audio.currentTime);
+
   //Prompts the user for a new title
   newTitle = prompt("Enter title name:");
 
@@ -78,12 +94,9 @@ function addTitle() {
     return;
   }
 
-  //Gets the current time of the audio
-  currentTime = Math.floor(audio.currentTime);
-
+  //Finds the correct position to insert the new title based  on time
   insertIndex = 0;
   for (let i = 0; i < times.length; i++) {
-    //Finds the correct position to insert the new title based on the current time
     if (currentTime >= times[i]) {
       insertIndex = i + 1;
     } else {
@@ -109,18 +122,17 @@ function moveBackward(seconds) {
 //Updates the current playback time
 function updateCurrentTime() {
   timeDisplay = document.getElementById('currentTimeDisplay');
-  timeDisplay.innerHTML= formatTime(audio.currentTime);
+  timeDisplay.innerHTML = formatTime(audio.currentTime);
 }
 
-//Continually updates the current time display every 500 milliseconds
+//Continually updates the current time display every 500 milliseconds to ensure correctness
 setInterval(updateCurrentTime, 500);
 
-//Loads the playlist and creates buttons for each segment
+//loads the playlist and creates buttons for each segment
 function loadPlaylist() {
   playlist = document.getElementById('playlist');
   playlist.innerHTML = "";
 
-  
   for (let i = 0; i < titles.length; i++) {
     const start = times[i];
     let end;
