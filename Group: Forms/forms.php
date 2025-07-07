@@ -1,8 +1,16 @@
+<!--
+  File: forms.php
+  Author: Jackson Champion
+  Date: 2025-07-07
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Inputs information for forms using PHP onto a Webpage
+  Notes: uses PHP and HTML
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>forms</title>
+  <title>Forms</title>
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -74,7 +82,7 @@
     <!--CheckBox Demo -->
     <p><strong>Programming Languages Learned(Checkbox Demo): </strong><br>
         <label><input type="checkbox" name="languages[]" value="HTML"> HTML</label><br>
-        <label><input type="checkbox" name="languages[]" value="C++"> CSS</label><br>
+        <label><input type="checkbox" name="languages[]" value="C++"> C++ </label><br>
         <label><input type="checkbox" name="languages[]" value="JavaScript"> JavaScript</label><br>
         <label><input type="checkbox" name="languages[]" value="PHP"> PHP</label><br>
         <label><input type="checkbox" name="languages[]" value="SQL"> SQL</label>
