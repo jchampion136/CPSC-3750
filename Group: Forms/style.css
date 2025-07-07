@@ -1,0 +1,327 @@
+/*
+  File: style.css
+  Author: Jackson Champion
+  Date: 2025-06-03
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Style Sheets for all webpages on my site.
+  Notes: Uses Simple and custom CSS styles.
+*/
+
+body {
+    font-size: 12pt;
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    color: black;
+    line-height: 14pt;
+    padding-left: 5pt;
+    padding-right: 5pt;
+    padding-top: 5pt;
+    margin: 10px;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 16pt;
+    font-weight: bold;
+    line-height: 20pt;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 20pt;
+}
+
+h4 {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 20pt;
+    color: #6c066c;
+}
+
+il {
+  margin-bottom: 30px;
+}
+
+footer {
+    font-size: 9pt;
+    font-style: italic;
+    line-height: 12pt;
+    text-align: center;
+    padding-top: 30pt;
+    background-color: #522D80;
+    color: white;
+    padding: 20px;
+    border-top: 5px solid #F56600;
+    margin-top: 40px;
+}
+
+aside {
+    padding: 10px;
+    font-style: italic;
+}
+
+.pet-footer {
+    text-align: left;
+    margin: 20px;
+    font-style: italic;
+    font-size: 10pt;
+}
+
+.grey-text {
+    color: grey;
+    font-weight: bold;
+}
+
+.orange-text {
+    color: orange;
+    font-weight: bold;
+}
+
+.lemon-text {
+    color: #fef250;
+    font-weight: bold;
+}
+
+.title {
+    font-size: 16pt;
+    color: blue;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 14pt;
+    color: orange;
+    font-weight: bold;
+}
+
+.img-dimensions {
+    max-width: 300px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.button-container {
+    margin-top: 20px;
+
+}
+
+.counter-container{
+    font-size: 12pt;
+    margin-bottom: 3em;
+    font-weight: bold;
+}
+
+.color-button{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    font-size: 8pt;
+}
+
+button {
+    background-color:black;
+    color:white;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+}
+
+button:hover, #addTitleBtn:hover {
+  background-color: aqua;
+}
+
+nav {
+    background-color: #522D80; 
+    padding: 15px;
+    text-align: left;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #FFD700; 
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.search-container {
+  display: inline-block;
+}
+
+.search-box {
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 12pt;
+}
+
+.search-btn {
+  padding: 12px;
+  background-color: #F56600;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #D35400;
+}
+
+.controls {
+  padding: 15px;
+  background-color: white;
+  display: flex;
+}
+
+.viewingArea {
+  width: 100%;
+  height: 75vh;
+  background-color: #666666;
+  color: white;
+  position:relative;
+  overflow: hidden;
+  border: 5px solid #522D80;
+}
+
+.sumDisplay {
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: auto;
+  color: #333;
+}
+
+.viewingArea button {
+  position: absolute;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#cardForm {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  margin: 5px;
+  box-shadow: 0 2px 8px 
+}
+
+#cardOutput {
+  max-width: 600px;
+  margin: 0;
+  padding: 10px;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.audioOutput {
+  font-weight: bold;
+  color: darkblue;
+  margin-top: 5px;
+}
+
+.hoverDiv {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.ui-progressbar-value {
+  background: #0375ee;
+  border-radius: 5px;
+}
+
+#wordToGuess {
+   margin: 20px;
+   font-size: 24px;
+}
+
+#letters {
+   display: grid;
+   grid-template-columns: 50px 50px 50px 50px 50px;
+   gap: 10px;
+   justify-content: center;
+   max-width: 300px;
+   margin: 0px auto;
+}
+
+#hangmanImage {
+   width: 200px;
+   height: auto;
+   display: block;
+   margin: 0 auto;
+}
+
+#letters button {
+   margin: 5px;
+   padding: 10px;
+   width: 40px;
+}
+
+.hidden {
+   visibility: hidden;
+}
+
+#hangman {
+   text-align: center;
+   margin-top: 30px;
+}
+
+#addTitleBtn {
+    background-color:rgb(238, 84, 84);
+    color:white;
+    font-size: 18px;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+}
+
+.textAreaInput {
+  width: 400px;
+  height: 100px;
+}
+
+
+
