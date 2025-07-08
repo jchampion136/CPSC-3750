@@ -1,0 +1,69 @@
+<!--
+  File: Handlebars.html
+  Author: Jackson Champion
+  Date: 2025-07-08
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Displays pet data using handlebars and functionality from Handlebars.js
+  Notes: Uses AJAX to fetch pet data and Handlebars to generate html data
+-->
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width-device-width, initial-scale=1" />
+    <title>AJAX And Handlebars</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+    <div class="page-wrap">
+        <h1>AJAX And Handlebars</h1>
+        <div id="pet-container"></div>
+    </div>
+
+    <script id="pet-template" type="text/x-handlebars-template">
+        {{#each pets}}
+            <div class="pet">
+                <div class="photo-column">
+                    <img src="{{photo}}" alt="{{name}}">
+                </div>
+                <div class="info-column">
+                    <h2>{{name}} <span class="species">({{species}})</span></h2>
+
+                    <p>Age: {{calculateAge birthYear}}</p>
+
+                    {{#if favFoods}}
+                    <h4 class="headline-bar">Favorite Foods</h4>
+                    <ul class="favorite-foods">
+                        {{#each favFoods}}
+                        <li>{{{this}}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+
+                </div>
+            </div>
+        {{/each}}
+    </script>
+
+    <div id="animal-info"></div>
+    <script src="Handlebars.js"></script>
+
+    <footer>
+        <h3>Contact Me</h3>
+        <h3> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></h3>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+            });
+        });
+    </script>
+</body>
+</html>
