@@ -1,0 +1,59 @@
+<!--
+  File: collectApp.html
+  Author: Jackson Champion
+  Date: 2025-07-16
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Presents the main page for the Collection App. Allows users to search cards from the scryfall API 
+  and store favorites into a collections page
+  Notes: Uses Scryfall API To access Magic: The Gathering Card Information
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Magic Card Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Magic: The Gathering Card Search</h1>
+
+  <div id="navbar"></div>
+
+  <!--Search bar and button to start search. -->
+  <input type="text" id="searchInput" placeholder="Search by name, type set and color.">
+  <button onclick="searchCards()">Search</button>
+
+  <!--Button to take user to thier collection of cards-->
+  <button onclick="showCollection()">View My Collection</button>
+
+  <!--Takes user to Stats Page-->
+  <a href="stats.html" class="button-link">View Stats</a>
+  
+
+  <!--Shows detailed information about a card when card is clicked-->
+  <div id="details"></div>
+
+  <!--Shows search results-->
+  <div id="results"></div>
+  
+  <!--Button to the about page centered at the bottom of the Main page-->
+  <p style="text-align:center; margin-top:20px;">
+    <a href="about.html" class="button-link">About My Project</a>
+  </p>
+  <footer>
+    <h3>Contact Me</h3>
+    <p> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+          .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+      s});
+  });
+  </script>
+  <script src="collectApp.js"></script>
+</body>
+</html>
