@@ -1,9 +1,9 @@
 <!--
   File: stats.html
   Author: Jackson Champion
-  Date: 2025-07-16
+  Date: 2025-07-18
   Course: CPSC 3750 – Web Application Development
-  Purpose: Shows live stats about MagicL The Gathering Cards from the Scryfall API.
+  Purpose: Shows live stats about Magic The Gathering Cards from the Scryfall API.
   Notes: Shows the oldest set, newest set and total amount of sets in real-time.
 -->
 <!DOCTYPE html>
@@ -19,36 +19,36 @@
     </nav>
 
     <h1>Magic: The Gathering Collection Stats</h1>
+    <a href="collectApp.html" class="button-link">Return to Search Page</a>
 
-    <div id="stats">Loading stats...</div>
+    <div id="stats"></div>
 
     <script>
         // Fetch all Magic: The Gathering sets
         fetch("https://api.scryfall.com/sets")
             .then(response => response.json())
-            .then(data => {
-            const sets = data.data;
+            .then(card => {
+                sets = card.data;
 
-            // Total sets
-            const totalSets = sets.length;
+                // Get total number of sets
+                totalSets = sets.length;
 
-            // Sort by release date to find oldest and newest
-            const sortedSets = sets
-                .filter(set => set.released_at) // only include sets with dates
+                // Sort by release date to find oldest and newest
+                sortedSet = sets
                 .sort((a, b) => new Date(a.released_at) - new Date(b.released_at));
 
-            //identify the oldest sets from newest sets after sorting
-            const oldestSet = sortedSets[0];
-            const newestSet = sortedSets[sortedSets.length - 1];
+                //identify the oldest sets from newest sets after sorting
+                oldestSet = sortedSet[0];
+                newestSet = sortedSet[sortedSet.length - 1];
 
-            // Display stats onto the page
-            const statsDiv = document.getElementById("stats");
-            statsDiv.innerHTML = `
-            <p><strong>Total Sets:</strong> ${totalSets}</p>
-            <p><strong>Oldest Set:</strong> ${oldestSet.name} (${oldestSet.released_at})</p>
-            <p><strong>Newest Set:</strong> ${newestSet.name} (${newestSet.released_at})</p>
-            `;
-        })
+                // Display stats onto the page
+                statsDiv = document.getElementById("stats");
+                statsDiv.innerHTML = `
+                <p><strong>Total Sets:</strong> ${totalSets}</p>
+                <p><strong>Oldest Set:</strong> ${oldestSet.name} (${oldestSet.released_at})</p>
+                <p><strong>Newest Set:</strong> ${newestSet.name} (${newestSet.released_at})</p>
+                `;
+            })
     </script>
     <footer>
         <h3>Contact Me</h3>
