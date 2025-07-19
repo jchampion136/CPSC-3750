@@ -1,7 +1,7 @@
 /*
   File: collectApp.js
   Author: Jackson Champion
-  Date: 2025-07-16
+  Date: 2025-07-18
   Course: CPSC 3750 – Web Application Development
   Purpose: handles card search and displays results for Magic: The Gathering cards
   From the Scryfall API
