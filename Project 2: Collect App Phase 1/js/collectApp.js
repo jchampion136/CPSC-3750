@@ -28,7 +28,7 @@ function searchCards() {
   }
   // Fetch cards from Scryfall's API
   fetch(url)
-    .then(response => response.json()) //Converts response into JSON
+    .then(response => response.json()) 
     .then(result => {
       //If no cards are found, Show "No results found"
       if (!result.data) {
