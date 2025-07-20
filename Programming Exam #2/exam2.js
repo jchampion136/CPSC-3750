@@ -3,7 +3,7 @@
   Author: Jackson Champion
   Date: 2025-07-19
   Course: CPSC 3750 – Web Application Development
-  Purpose: fetches words from a text file based on the number of vowels
+  Purpose: Gets words from a text file based on the number of vowels
   Notes: executed by exam2.php
 */
 
