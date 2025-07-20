@@ -4,8 +4,8 @@
   Author: Jackson Champion
   Date: 2025-07-19
   Course: CPSC 3750 – Web Application Development
-  Purpose: Provides the front end interface with buttons that display words with that many vowels
-  Notes: Uses Javascript functionality from exam2.js to fetch and display words and uses AJAX requests 
+  Purpose: Provides the front end interface with buttons that display matching words with vowel counts
+  Notes: Uses Javascript functionality from exam2.js to fetch and display words and AJAX requests 
     
 */
 
@@ -37,12 +37,12 @@ foreach ($words as $word) {
     $vowelArr[$count][] = $word;
 }
 
-//Sort each word alphabetically
-foreach ($vowelArr as &$list) {
-    sort($list);
+//Sort each list alphabetically
+foreach ($vowelArr as $count => $words) {
+    sort($vowelArr[$count]);
 }
 
-//Sorts the words in ascending order
+//Sorts the vowels in ascending order
 ksort($vowelArr);
 
 //Check for numVowels in the URL
