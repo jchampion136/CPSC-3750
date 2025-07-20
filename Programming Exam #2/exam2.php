@@ -42,7 +42,7 @@ foreach ($vowelArr as &$list) {
     sort($list);
 }
 
-//Sorts the vowels in ascending order
+//Sorts the words in ascending order
 ksort($vowelArr);
 
 //Check for numVowels in the URL
