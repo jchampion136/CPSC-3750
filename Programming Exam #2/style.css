@@ -451,8 +451,7 @@ section {
 #word-list {
   height: 500px;
   width: 500px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: scroll;
   border: 1px solid #ccc;
   padding: 10px;    
   background: white;
