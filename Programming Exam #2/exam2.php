@@ -4,8 +4,8 @@
   Author: Jackson Champion
   Date: 2025-07-19
   Course: CPSC 3750 – Web Application Development
-  Purpose: Provides the front end interface with buttons that display matching words with vowel counts
-  Notes: Uses Javascript functionality from exam2.js to fetch and display words and AJAX requests 
+  Purpose: Provides the front end interface with buttons that display words with that many vowels
+  Notes: Uses Javascript functionality from exam2.js to fetch and display words and uses AJAX requests 
     
 */
 
