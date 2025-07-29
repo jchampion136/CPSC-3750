@@ -31,7 +31,7 @@ $user_id = $_SESSION['user_id'];
 $item_id = mysqli_real_escape_string($mysqli, $_POST['item_id']);
 
 
-//Checks if acrtion is set in POST request
+//Checks if action is set in POST request
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else {

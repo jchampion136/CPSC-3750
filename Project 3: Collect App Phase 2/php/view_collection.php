@@ -57,7 +57,7 @@ $result = mysqli_query($mysqli, $sql);
 
 // Check if user has saved any favorites
 if ($result && mysqli_num_rows($result) > 0) {
-    echo "<ul class='favorites-list'>";
+    echo "<ul>";
 
     // Loop through each favorite item
     while ($row = mysqli_fetch_assoc($result)) {
@@ -66,7 +66,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 
         // Fetch card details from Scryfall API
         $api_url = "https://api.scryfall.com/cards/" . $item_id;
-        $api_response = @file_get_contents($api_url);
+        $api_response = file_get_contents($api_url);
         $card = json_decode($api_response, true);
 
         //Display card details if valid
@@ -77,7 +77,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             $card_set = htmlspecialchars($card['set_name']);
 
             //Output card information
-            echo "<li class='favorite-card'>";
+            echo "<li>";
             echo "<h3>$card_name</h3>";
             echo $card_image ? "<img src='$card_image' alt='$card_name'>" : "";
             echo "<p><strong>Type:</strong> $card_type</p>";
