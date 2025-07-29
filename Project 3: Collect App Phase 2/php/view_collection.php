@@ -86,7 +86,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             echo "<button onclick=\"removeFromFavorites('$item_id')\">Remove from Favorites</button>";
             echo "</li>";
         } else { //Display if card not found
-            echo "<li class='favorite-card'>";
+            echo "<li>";
             echo "<h3 style='color:red;'>Card not found</h3>";
             echo "<p>Item ID: <code>$item_id</code></p>";
             echo "<p><small>Favorited At: $favorited_at</small></p>";
