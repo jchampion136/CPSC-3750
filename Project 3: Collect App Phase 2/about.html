@@ -1,0 +1,60 @@
+<!--
+  File: about.html
+  Author: Jackson Champion
+  Date: 2025-07-16
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Displays an about page separated into sections showing information about the Collect App and access to the API
+  Notes: Displays information and gives access to Scryfall API
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About This Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div id="navbar"></div>
+    </nav>
+
+    <h1>About The Magic: The Gathering Collect App</h1>
+    <a href="collectApp.html" class="button-link">Return to Search Page</a>
+
+    <!--Describes the purpose of the project-->
+    <section>
+        <h2>About Our Page</h2>
+        <p>
+            This is a search application that uses an API from the website 
+            <strong><b></b>Scryfall </b></strong> to fetch real-time Magic: The Gathering information.
+            You can search for cards, view specific cards, and add them to your collection of favorites.
+            Stats about the collection are also available in real-time on the <strong>Stats</strong> page.
+
+        </p>
+    </section>
+
+    <!--Provides the user a link to the API used in the project-->
+    <section>
+        <h2>API Link</h2>
+        <p>
+            You can access the <strong>Scryfall API directly here: </strong> <a href="https://scryfall.com/docs/api">https://scryfall.com/docs/api</a>
+        </p>
+    </section>
+
+    <footer>
+        <h3>Contact Me</h3>
+        <p> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+        });
+    });
+    </script>
+</body>
+</html>

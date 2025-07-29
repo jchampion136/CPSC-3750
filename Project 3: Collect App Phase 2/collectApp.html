@@ -1,0 +1,67 @@
+<!--
+  File: collectApp.html
+  Author: Jackson Champion
+  Date: 2025-07-16
+  Course: CPSC 3750 – Web Application Development
+  Purpose: Presents the main page for the Collection App. Allows users to search cards from the scryfall API 
+  and store favorites into a collections page
+  Notes: Uses Scryfall API To access Magic: The Gathering Card Information
+--->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Magic Card Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Magic: The Gathering Card Search</h1>
+
+  <div id="navbar"></div>
+
+
+  <a href="login.php" class="button-link">Login</a>
+  <a href="login.php?logout=1" class="button-link">Logout</a>
+  <a href="register.php" class="button-link">Register</a>
+  <a href="master_user.php" class="button-link">View User List</a>
+  <a href="master_collection.php" class="button-link">View User Favorites</a>
+
+  <br>
+  
+  <!--Search bar and button to start search. -->
+  <input type="text" id="searchInput" placeholder="Search for any card....">
+  <button onclick="searchCards()">Search</button>
+
+  <!--Takes user to Stats Page-->
+  <a href="stats.html" class="button-link">View Stats</a>
+  <a href="view_collection.php" class="button-link">View My Favorites</a>
+  
+
+  <!--Shows detailed information about a card when card is clicked-->
+  <div id="details"></div>
+
+  <!--Shows search results-->
+  <div id="results"></div>
+  
+  <!--Button to the about page centered at the bottom of the Main page-->
+  <p style="text-align:center; margin-top:20px;">
+    <a href="about.html" class="button-link">About My Project</a>
+  </p>
+
+  <footer>
+    <h3>Contact Me</h3>
+    <p> Email me at <a href="mailto:jackson.champion136@gmail.com">jackson.champion136@gmail.com</a></p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('navbar.html')
+        .then(response => response.text())
+          .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+      });
+  });
+  </script>
+  
+  <script src="collectApp.js"></script>
+</body>
+</html>
